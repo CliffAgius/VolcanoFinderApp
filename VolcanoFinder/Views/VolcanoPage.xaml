@@ -34,19 +34,19 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
-                        BackgroundColor="LightBLue"
-                        BorderColor="LightBlue"
+                        BackgroundColor="{StaticResource CAS-MedBlue}"
+                        BorderColor="{StaticResource CAS-MedBlue}"
                         CornerRadius="5">
                         <StackLayout
                             Padding="10"
                             x:DataType="model:Volcano">
                             <Label
-                                FontSize="16"
+                                FontSize="24"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemTextStyle}"
                                 Text="{Binding VolcanoName}" />
                             <Label
-                                FontSize="13"
+                                FontSize="16"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 Text="{Binding Country}" />
