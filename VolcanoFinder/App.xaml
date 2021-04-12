@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="VolcanoFinder.App"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <!--
+        Define global resources and styles here, that apply to all pages in your app.
+    -->
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Primary">#2196F3</Color>
+            <Style TargetType="Button">
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{StaticResource Primary}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="#332196F3" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+
+            <!--  Colors  -->
+            <Color x:Key="CAS-Pink">#ca3e9a</Color>
+            <Color x:Key="CAS-Pink50Alpha">#88ca3e9a</Color>
+            <Color x:Key="CAS-Dark">#191839</Color>
+            <Color x:Key="CAS-Purple">#833ec9</Color>
+            <Color x:Key="CAS-Blue">#3fc6ef</Color>
+            <Color x:Key="CAS-White">#ffffff</Color>
+            <Color x:Key="CAS-Green">#19ff3e</Color>
+            <Color x:Key="CAS-Orange">#ffa21a</Color>
+            <Color x:Key="CAS-Red">#f93838</Color>
+            <Color x:Key="CAS-Grey">#74748b</Color>
+
+            <!--  Font Icons  -->
+            <x:String x:Key="Volcano">&#xF02F5;</x:String>
+            <x:String x:Key="GotoVolcano">&#xF09F8;</x:String>
+            <x:String x:Key="AddVolcano">&#xF087C;</x:String>
+            <x:String x:Key="SearchVolcano">&#xF0977;</x:String>
+            <x:String x:Key="Login">&#xF0342;</x:String>
+            <x:String x:Key="Logout">&#xF0343;</x:String>
+
+            <Style
+                x:Key="LabelText"
+                TargetType="Label">
+                <Setter Property="Margin" Value="10, 0" />
+                <Setter Property="FontFamily" Value="Nunito-Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="{StaticResource CAS-Dark}" />
+            </Style>
+
+            <Style
+                x:Key="ValueText"
+                TargetType="Label">
+                <Setter Property="Margin" Value="20,0" />
+                <Setter Property="FontFamily" Value="Nunito-Bold" />
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="{StaticResource CAS-Grey}" />
+            </Style>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

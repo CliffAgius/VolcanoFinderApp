@@ -1,0 +1,1 @@
+C:\CA-Software\speaking\VolcanoFinder\VolcanoFinder\VolcanoFinder.UWP\VolcanoFinder.UWP.csproj;x86

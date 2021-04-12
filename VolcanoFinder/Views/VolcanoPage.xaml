@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VolcanoFinder.Views.VolcanoPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:VolcanoFinder.ViewModels"
+    xmlns:model="clr-namespace:VolcanoFinder.Models"
+    x:Name="BrowseVolcanoesPage"
+    Title="{Binding Title}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem
+            Command="{Binding AddVolcanoCommand}"
+            Text="Add" />
+    </ContentPage.ToolbarItems>
+    <!--
+        x:DataType enables compiled bindings for better performance and compile time validation of binding expressions.
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/data-binding/compiled-bindings
+    -->
+    <RefreshView
+        Margin="20"
+        x:DataType="local:VolcanoViewModel"
+        Command="{Binding LoadVolcanoCommand}"
+        IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+        <CollectionView
+            x:Name="VolcanoesListView"
+            ItemsSource="{Binding Volcanoes}"
+            SelectionMode="None">
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout
+                    ItemSpacing="10"
+                    Orientation="Vertical" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame
+                        BackgroundColor="LightBLue"
+                        BorderColor="LightBlue"
+                        CornerRadius="5">
+                        <StackLayout
+                            Padding="10"
+                            x:DataType="model:Volcano">
+                            <Label
+                                FontSize="16"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemTextStyle}"
+                                Text="{Binding VolcanoName}" />
+                            <Label
+                                FontSize="13"
+                                LineBreakMode="NoWrap"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                Text="{Binding Country}" />
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:VolcanoViewModel}}, Path=ItemTapped}"
+                                    CommandParameter="{Binding .}"
+                                    NumberOfTapsRequired="1" />
+
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </RefreshView>
+</ContentPage>

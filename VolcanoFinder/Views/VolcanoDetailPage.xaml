@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="VolcanoFinder.Views.VolcanoDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}">
+
+    <ScrollView>
+        <StackLayout
+            Padding="15"
+            Spacing="20">
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Volcano Name:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding VolcanoName}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Country:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding Country}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Region:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding Region}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Elevation:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding Elevation}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Type:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding Type}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Status:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding Status}" />
+            <Label
+                Style="{StaticResource LabelText}"
+                Text="Last Known Erruption:" />
+            <Label
+                Style="{StaticResource ValueText}"
+                Text="{Binding LastKnownErruption}" />
+
+            <Button
+                Command="{Binding OpenMapCommand}"
+                IsEnabled="{Binding MapButtonEnabled}"
+                Text="See Location Map!" />
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
