@@ -1,17 +1,27 @@
-﻿using System;
+﻿using Microsoft.Identity.Client;
 using VolcanoFinder.Services;
-using VolcanoFinder.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace VolcanoFinder
 {
     public partial class App : Application
     {
 
+        public static object AuthUIParent = null;
+
+        public static IPublicClientApplication ClientApplication;
+        public static AuthenticationResult AuthResult;
+        public static IAccount CurrentAccount;
+
         public App()
         {
             InitializeComponent();
+
+            ClientApplication = PublicClientApplicationBuilder.Create(Constants.ClientId)
+                              .WithRedirectUri(Constants.RedirectUri)
+                              .WithAuthority($"https://login.microsoftonline.com/{Constants.TenantId}")
+                              .WithIosKeychainSecurityGroup(Constants.iOSKeyChainSecurityGroup)
+                              .Build();
 
             DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();

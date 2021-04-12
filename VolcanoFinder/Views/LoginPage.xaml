@@ -8,13 +8,31 @@
     Shell.NavBarIsVisible="False"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout
-            Padding="10,0,10,0"
-            VerticalOptions="Center">
-            <Button
-                Command="{Binding LoginCommand}"
-                Text="Login"
-                VerticalOptions="Center" />
+        <StackLayout>
+            <Frame
+                Padding="24"
+                BackgroundColor="#2196F3"
+                CornerRadius="0">
+                <Label
+                    FontSize="36"
+                    HorizontalTextAlignment="Center"
+                    Text="Welcome to Volcano Finder"
+                    TextColor="White" />
+            </Frame>
+            <StackLayout
+                HorizontalOptions="Center"
+                VerticalOptions="Center">
+                <Label
+                    Padding="30,40,30,0"
+                    FontSize="16"
+                    Text="Sign in to view interesting Volcano Facts!" />
+
+                <Button
+                    x:Name="Login"
+                    Margin="50,30,50,30"
+                    Command="{Binding LoginCommand}"
+                    Text="Log In" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
