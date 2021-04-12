@@ -23,7 +23,7 @@ namespace VolcanoFinder.ViewModels
         private async Task ActionLogOut()
         {
             await AuthService.SignOut();
-            await Shell.Current.GoToAsync($"//LoginPage");
+            await Shell.Current.GoToAsync($"//login");
         }
 
         public ICommand OpenWebCommand { get; }

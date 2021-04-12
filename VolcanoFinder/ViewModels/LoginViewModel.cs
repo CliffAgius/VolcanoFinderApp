@@ -24,8 +24,17 @@ namespace VolcanoFinder.ViewModels
 
         private async void OnLoginClicked()
         {
-            // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-            await Shell.Current.GoToAsync($"//{nameof(AboutPage)}");
+            try
+            {
+                await AuthService.SignInAsync();
+                // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+                await Shell.Current.GoToAsync($"//main");
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
         }
     }
 }

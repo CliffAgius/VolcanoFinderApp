@@ -36,13 +36,11 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <TabBar>
-        <ShellContent
-            ContentTemplate="{DataTemplate local:LoginPage}"
-            Route="LoginPage" />
-    </TabBar>
+    <ShellItem Route="login">
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+    </ShellItem>
 
-    <TabBar>
+    <TabBar Route="main">
         <ShellContent
             Title="About"
             ContentTemplate="{DataTemplate local:AboutPage}"
