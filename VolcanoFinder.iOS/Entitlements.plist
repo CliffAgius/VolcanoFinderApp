@@ -4,8 +4,7 @@
 <dict>
 	<key>keychain-access-groups</key>
 	<array>
-		<string>$(AppIdentifierPrefix)com.companyname.VolcanoFinder</string>
-		<string>$(AppIdentifierPrefix)com.companyname.AuthWithAAD</string>
+		<string>$(AppIdentifierPrefix)com.CASoftware.VolcanoFinder</string>
 	</array>
 </dict>
 </plist>
