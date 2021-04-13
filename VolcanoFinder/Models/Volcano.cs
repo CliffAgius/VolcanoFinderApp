@@ -2,7 +2,6 @@
 {
     public class Volcano
     {
-
             public string VolcanoName { get; set; }
             public string Country { get; set; }
             public string Region { get; set; }

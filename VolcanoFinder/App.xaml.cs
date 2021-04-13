@@ -23,7 +23,8 @@ namespace VolcanoFinder
                               .WithIosKeychainSecurityGroup(Constants.iOSKeyChainSecurityGroup)
                               .Build();
 
-            DependencyService.Register<MockDataStore>();
+            //DependencyService.Register<MockDataStore>();
+            DependencyService.Register<CloudDataStore>();
             MainPage = new AppShell();
         }
 

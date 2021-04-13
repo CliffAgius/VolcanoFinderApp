@@ -1,9 +1,5 @@
-﻿using Microsoft.Identity.Client;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System;
 using VolcanoFinder.Services;
-using VolcanoFinder.Views;
 using Xamarin.Forms;
 
 namespace VolcanoFinder.ViewModels
@@ -16,10 +12,8 @@ namespace VolcanoFinder.ViewModels
         {
             LoginCommand = new Command(OnLoginClicked);
 
-            if (App.AuthResult != null)
-            {
-                OnLoginClicked();
-            }
+            //Try to Auto Login...
+            OnLoginClicked();
         }
 
         private async void OnLoginClicked()
@@ -27,13 +21,16 @@ namespace VolcanoFinder.ViewModels
             try
             {
                 await AuthService.SignInAsync();
-                // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
-                await Shell.Current.GoToAsync($"//main");
+
+                if (App.AuthResult != null)
+                {
+                    // Prefixing with `//` switches to a different navigation stack instead of pushing to the active one
+                    await Shell.Current.GoToAsync($"//main");
+                }
             }
             catch (Exception ex)
             {
 
-                throw;
             }
         }
     }
