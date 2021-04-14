@@ -8,34 +8,99 @@
     ios:Page.UseSafeArea="true"
     Shell.PresentationMode="ModalAnimated">
     <ContentPage.Content>
-        <StackLayout
-            Padding="15"
-            Spacing="3">
-            <Label
-                FontSize="Medium"
-                Text="Volcano Name" />
-            <Entry
-                FontSize="Medium"
-                Text="{Binding Name, Mode=TwoWay}" />
-            <Label
-                FontSize="Medium"
-                Text="Country" />
-            <Editor
-                Margin="0"
-                AutoSize="TextChanges"
-                FontSize="Medium"
-                Text="{Binding Country, Mode=TwoWay}" />
-            <StackLayout Orientation="Horizontal">
-                <Button
-                    Command="{Binding CancelCommand}"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Cancel" />
-                <Button
-                    Command="{Binding SaveCommand}"
-                    HorizontalOptions="FillAndExpand"
-                    Text="Save" />
+        <ScrollView>
+            <StackLayout
+                Padding="15"
+                Spacing="3">
+                <Label
+                    Margin="10"
+                    FontSize="Large"
+                    HorizontalTextAlignment="Center"
+                    Text="Add your favorite Volcano to the system..."
+                    TextColor="{StaticResource CAS-Dark}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Volcano Name *" />
+                <Entry
+                    FontSize="Medium"
+                    Text="{Binding VolcanonName, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Country *" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Text="{Binding Country, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Region" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Text="{Binding Region, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Elevation" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Keyboard="Numeric"
+                    Text="{Binding Elevation, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Type" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Text="{Binding Type, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Status" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Text="{Binding Status, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Last Known Erruption" />
+                <DatePicker
+                    Margin="0"
+                    Date="{Binding LastKnownErruption, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Latitude" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Keyboard="Numeric"
+                    Text="{Binding Lat, Mode=TwoWay}" />
+                <Label
+                    FontSize="Medium"
+                    Text="Longitude" />
+                <Editor
+                    Margin="0"
+                    AutoSize="TextChanges"
+                    FontSize="Medium"
+                    Keyboard="Numeric"
+                    Text="{Binding Lon, Mode=TwoWay}" />
+                <StackLayout Orientation="Horizontal">
+                    <Button
+                        Command="{Binding CancelCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Cancel" />
+                    <Button
+                        Command="{Binding SaveCommand}"
+                        HorizontalOptions="FillAndExpand"
+                        Text="Save" />
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 
 </ContentPage>

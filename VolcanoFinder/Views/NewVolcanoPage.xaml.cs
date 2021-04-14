@@ -6,8 +6,6 @@ namespace VolcanoFinder.Views
 {
     public partial class NewVolcanoPage : ContentPage
     {
-        public Volcano volcano { get; set; }
-
         public NewVolcanoPage()
         {
             InitializeComponent();

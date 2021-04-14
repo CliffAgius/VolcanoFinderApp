@@ -11,6 +11,13 @@ namespace VolcanoFinder.ViewModels
     {
         private string volcanoName;
         private string country;
+        private string region;
+        private int elevation;
+        private string type;
+        private string status;
+        private DateTime lastKnownErruption;
+        private float lat;
+        private float lon;
 
         public NewVolcanoViewModel()
         {
@@ -26,16 +33,58 @@ namespace VolcanoFinder.ViewModels
                 && !String.IsNullOrWhiteSpace(country);
         }
 
-        public string Text
+        public string VolcanonName
         {
             get => volcanoName;
             set => SetProperty(ref volcanoName, value);
         }
 
-        public string Description
+        public string Country
         {
             get => country;
             set => SetProperty(ref country, value);
+        }
+
+        public string Region
+        {
+            get => region;
+            set => SetProperty(ref region, value);
+        }
+
+        public int Elevation
+        {
+            get => elevation;
+            set => SetProperty(ref elevation, value);
+        }
+
+        public string Type
+        {
+            get => type;
+            set => SetProperty(ref type, value);
+        }
+
+        public string Status
+        {
+            get => status;
+            set => SetProperty(ref status, value);
+        }
+
+        public DateTime LastKnownErruption
+        {
+            get => lastKnownErruption;
+            set => SetProperty(ref lastKnownErruption, value);
+        }
+
+        public float Lat
+        {
+            get => lat;
+            set => SetProperty(ref lat, value);
+        }
+
+        public float Lon
+        {
+            get => lon;
+            set => SetProperty(ref lon, value);
         }
 
         public Command SaveCommand { get; }
@@ -49,14 +98,20 @@ namespace VolcanoFinder.ViewModels
 
         private async void OnSave()
         {
-            Volcano newItem = new Volcano()
+            Volcano newVolcano = new Volcano()
             {
                 Id = Guid.NewGuid().ToString(),
-                VolcanoName = Text,
-                Country = Description
+                VolcanoName = VolcanonName,
+                Country = Country,
+                Region = Region,
+                Elevation = Elevation,
+                Type = Type,
+                Status = Status,
+                LastKnownEruption = LastKnownErruption.ToString(),
+                Location = new Location { type = "Point", coordinates = new float[] { Lon, Lat } }
             };
 
-            await DataStore.AddItemAsync(newItem);
+            await DataStore.AddItemAsync(newVolcano);
 
             // This will pop the current page off the navigation stack
             await Shell.Current.GoToAsync("..");
