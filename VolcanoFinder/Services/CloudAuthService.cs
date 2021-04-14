@@ -6,9 +6,13 @@ using System.Threading.Tasks;
 
 namespace VolcanoFinder.Services
 {
-    public class AuthService
+    public class CloudAuthService : IAuthService
     {
-        public static async Task SignInAsync()
+        public CloudAuthService()
+        {
+        }
+
+        public async Task SignInAsync()
         {
             try
             {
@@ -40,7 +44,7 @@ namespace VolcanoFinder.Services
             }
         }
 
-        public static async Task SignOut()
+        public async Task SignOut()
         {
             await App.ClientApplication.RemoveAsync(App.CurrentAccount);
             App.AuthResult = null;

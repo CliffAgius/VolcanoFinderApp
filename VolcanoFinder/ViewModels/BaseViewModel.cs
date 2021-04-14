@@ -11,6 +11,7 @@ namespace VolcanoFinder.ViewModels
     public class BaseViewModel : INotifyPropertyChanged
     {
         public IDataStore<Volcano> DataStore => DependencyService.Get<IDataStore<Volcano>>();
+        public IAuthService AuthService => DependencyService.Get<IAuthService>();
 
         bool isBusy = false;
         public bool IsBusy

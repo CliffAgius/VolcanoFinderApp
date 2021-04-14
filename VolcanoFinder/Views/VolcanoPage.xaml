@@ -3,6 +3,7 @@
     x:Class="VolcanoFinder.Views.VolcanoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:local="clr-namespace:VolcanoFinder.ViewModels"
     xmlns:model="clr-namespace:VolcanoFinder.Models"
     x:Name="BrowseVolcanoesPage"
@@ -37,9 +38,18 @@
                         BackgroundColor="{StaticResource CAS-MedBlue}"
                         BorderColor="{StaticResource CAS-MedBlue}"
                         CornerRadius="5">
-                        <StackLayout
+                        <Grid
                             Padding="10"
                             x:DataType="model:Volcano">
+                            <ffimageloadingsvg:CachedImage
+                                CacheDuration="50"
+                                DownsampleToViewSize="true"
+                                HeightRequest="60"
+                                HorizontalOptions="End"
+                                RetryCount="3"
+                                RetryDelay="600"
+                                Source="https://hatscripts.github.io/circle-flags/flags/ru.svg"
+                                WidthRequest="60" />
                             <Label
                                 FontSize="24"
                                 LineBreakMode="NoWrap"
@@ -50,14 +60,13 @@
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 Text="{Binding Country}" />
-                            <StackLayout.GestureRecognizers>
+                            <Grid.GestureRecognizers>
                                 <TapGestureRecognizer
                                     Command="{Binding Source={RelativeSource AncestorType={x:Type local:VolcanoViewModel}}, Path=ItemTapped}"
                                     CommandParameter="{Binding .}"
                                     NumberOfTapsRequired="1" />
-
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
+                            </Grid.GestureRecognizers>
+                        </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

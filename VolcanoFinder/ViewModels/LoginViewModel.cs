@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using VolcanoFinder.Services;
 using Xamarin.Forms;
 
@@ -30,7 +31,8 @@ namespace VolcanoFinder.ViewModels
             }
             catch (Exception ex)
             {
-
+                await App.Current.MainPage.DisplayAlert("Error", "Login failed!", "OK");
+                Debug.WriteLine($"Login Error - {ex.Message}");
             }
         }
     }

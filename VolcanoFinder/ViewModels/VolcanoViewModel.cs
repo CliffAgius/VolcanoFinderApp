@@ -32,12 +32,16 @@ namespace VolcanoFinder.ViewModels
         {
             IsBusy = true;
 
+            var countryCode = new CountryFlagLookup();
             try
             {
                 Volcanoes.Clear();
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
+                    string code;
+                    countryCode.Countries.TryGetValue(item.Country, out code);
+                    item.CountryFlagURL = "https://hatscripts.github.io/circle-flags/flags/" + code + ".svg";
                     Volcanoes.Add(item);
                 }
             }
