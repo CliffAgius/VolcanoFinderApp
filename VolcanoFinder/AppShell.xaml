@@ -4,7 +4,8 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:VolcanoFinder.Views"
-    Title="VolcanoFinder">
+    Title="VolcanoFinder"
+    FlyoutBehavior="Disabled">
 
     <!--
         The overall app visual hierarchy is defined here, along with navigation.
@@ -36,10 +37,10 @@
         </ResourceDictionary>
     </Shell.Resources>
 
-    <ShellItem Route="login">
-        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
-    </ShellItem>
-    
+    <ShellContent
+        ContentTemplate="{DataTemplate local:LoginPage}"
+        Route="login" />
+
     <TabBar Route="main">
         <ShellContent
             Title="About"

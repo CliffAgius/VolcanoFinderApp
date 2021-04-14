@@ -1,5 +1,8 @@
-﻿namespace VolcanoFinder.Models
+﻿using System.Collections.Generic;
+
+namespace VolcanoFinder.Models
 {
+
     public class Volcano
     {
         public string VolcanoName { get; set; }
