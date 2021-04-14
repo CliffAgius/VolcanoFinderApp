@@ -41,6 +41,7 @@
             <Color x:Key="CAS-Orange">#ffa21a</Color>
             <Color x:Key="CAS-Red">#f93838</Color>
             <Color x:Key="CAS-Grey">#74748b</Color>
+            <Color x:Key="CAS-LightGrey">#E8E8E8</Color>
 
             <!--  Font Icons  -->
             <x:String x:Key="Volcano">&#xF02F5;</x:String>

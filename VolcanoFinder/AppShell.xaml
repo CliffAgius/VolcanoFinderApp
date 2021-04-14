@@ -37,9 +37,9 @@
     </Shell.Resources>
 
     <ShellItem Route="login">
-        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}" />
+        <ShellContent ContentTemplate="{DataTemplate local:LoginPage}"/>
     </ShellItem>
-
+    
     <TabBar Route="main">
         <ShellContent
             Title="About"

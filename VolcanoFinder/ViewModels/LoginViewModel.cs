@@ -14,7 +14,7 @@ namespace VolcanoFinder.ViewModels
             LoginCommand = new Command(OnLoginClicked);
 
             //Try to Auto Login...
-            OnLoginClicked();
+            //OnLoginClicked();
         }
 
         private async void OnLoginClicked()

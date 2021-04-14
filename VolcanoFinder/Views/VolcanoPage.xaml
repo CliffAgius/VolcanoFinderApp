@@ -7,7 +7,8 @@
     xmlns:local="clr-namespace:VolcanoFinder.ViewModels"
     xmlns:model="clr-namespace:VolcanoFinder.Models"
     x:Name="BrowseVolcanoesPage"
-    Title="{Binding Title}">
+    Title="{Binding Title}"
+    BackgroundImageSource="volcano3.jpeg">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -35,13 +36,16 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Frame
-                        BackgroundColor="{StaticResource CAS-MedBlue}"
-                        BorderColor="{StaticResource CAS-MedBlue}"
-                        CornerRadius="5">
+                        BackgroundColor="{StaticResource CAS-LightGrey}"
+                        BorderColor="{StaticResource CAS-Grey}"
+                        CornerRadius="20">
                         <Grid
                             Padding="10"
-                            x:DataType="model:Volcano">
+                            x:DataType="model:Volcano"
+                            RowDefinitions="*,*">
                             <ffimageloadingsvg:CachedImage
+                                Grid.Row="0"
+                                Grid.RowSpan="2"
                                 CacheDuration="50"
                                 DownsampleToViewSize="true"
                                 HeightRequest="60"
@@ -51,11 +55,13 @@
                                 Source="https://hatscripts.github.io/circle-flags/flags/ru.svg"
                                 WidthRequest="60" />
                             <Label
+                                Grid.Row="0"
                                 FontSize="24"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemTextStyle}"
                                 Text="{Binding VolcanoName}" />
                             <Label
+                                Grid.Row="1"
                                 FontSize="16"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"

@@ -7,10 +7,12 @@
 
   <ItemGroup>
     <None Remove="Fonts\materialdesignicons-webfont.ttf" />
+    <None Remove="Images\volcano3.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\materialdesignicons-webfont.ttf" />
+    <EmbeddedResource Include="Images\volcano3.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
