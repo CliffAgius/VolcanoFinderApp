@@ -7,21 +7,42 @@
 
   <ItemGroup>
     <None Remove="Fonts\materialdesignicons-webfont.ttf" />
+    <None Remove="Images\volcano1.jpeg" />
+    <None Remove="Images\volcano1.png" />
+    <None Remove="Images\volcano2.jpeg" />
+    <None Remove="Images\volcano2.png" />
     <None Remove="Images\volcano3.jpeg" />
+    <None Remove="Images\volcano3.png" />
+    <None Remove="Images\volcano4.jpeg" />
+    <None Remove="Images\volcano4.png" />
+    <None Remove="Images\volcano5.jpeg" />
+    <None Remove="Images\Volcano5.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="Fonts\materialdesignicons-webfont.ttf" />
-    <EmbeddedResource Include="Images\volcano3.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Identity.Client" Version="4.29.0" />
+    <PackageReference Include="Resizetizer.NT" Version="0.2.0" />
+    <PackageReference Include="SkiaSharp" Version="2.80.2" />
     <PackageReference Include="System.Text.Json" Version="5.0.2" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="1.1.0" />
+    <PackageReference Include="Xamarin.FFImageLoading" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
+    <PackageReference Include="Xamarin.FFImageLoading.Svg" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SharedImage Include="Images\volcano1.png" />
+    <SharedImage Include="Images\volcano2.png" />
+    <SharedImage Include="Images\volcano3.png" />
+    <SharedImage Include="Images\volcano4.png" />
+    <SharedImage Include="Images\Volcano5.png" />
   </ItemGroup>
 
   <ItemGroup>

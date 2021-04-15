@@ -58,6 +58,7 @@ namespace VolcanoFinder.UWP
                 rootFrame.NavigationFailed += OnNavigationFailed;
                 global::Xamarin.Forms.Forms.SetFlags("Shell_UWP_Experimental");
                 Xamarin.Forms.Forms.Init(e);
+                FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
                 {

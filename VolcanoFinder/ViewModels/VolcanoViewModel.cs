@@ -39,8 +39,7 @@ namespace VolcanoFinder.ViewModels
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    string code;
-                    countryCode.Countries.TryGetValue(item.Country, out code);
+                    countryCode.Countries.TryGetValue(item.Country, out string code);
                     item.CountryFlagURL = "https://hatscripts.github.io/circle-flags/flags/" + code + ".svg";
                     Volcanoes.Add(item);
                 }

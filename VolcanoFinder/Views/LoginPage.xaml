@@ -11,14 +11,18 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame
-                Padding="24"
+                Padding="-10"
                 BackgroundColor="{StaticResource CAS-MedBlue}"
                 CornerRadius="0">
-                <Label
-                    FontSize="36"
-                    HorizontalTextAlignment="Center"
-                    Text="Welcome to Volcano Finder"
-                    TextColor="White" />
+                <Grid>
+                    <Image Source="volcano1.png" />
+                    <Label
+                        FontSize="36"
+                        HorizontalTextAlignment="Center"
+                        Text="Welcome to Volcano Finder"
+                        TextColor="White"
+                        VerticalTextAlignment="End" />
+                </Grid>
             </Frame>
             <StackLayout
                 HorizontalOptions="Center"

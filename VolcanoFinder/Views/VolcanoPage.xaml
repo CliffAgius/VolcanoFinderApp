@@ -3,12 +3,19 @@
     x:Class="VolcanoFinder.Views.VolcanoPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:converters="clr-namespace:VolcanoFinder.Converters"
+    xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
     xmlns:local="clr-namespace:VolcanoFinder.ViewModels"
     xmlns:model="clr-namespace:VolcanoFinder.Models"
     x:Name="BrowseVolcanoesPage"
     Title="{Binding Title}"
-    BackgroundImageSource="volcano3.jpeg">
+    BackgroundImageSource="volcano4.png">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:SourceConverter x:Key="sourceConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
 
     <ContentPage.ToolbarItems>
         <ToolbarItem
@@ -43,16 +50,11 @@
                             Padding="10"
                             x:DataType="model:Volcano"
                             RowDefinitions="*,*">
-                            <ffimageloadingsvg:CachedImage
+                            <ffimageloading:CachedImage
                                 Grid.Row="0"
                                 Grid.RowSpan="2"
-                                CacheDuration="50"
-                                DownsampleToViewSize="true"
-                                HeightRequest="60"
-                                HorizontalOptions="End"
                                 RetryCount="3"
-                                RetryDelay="600"
-                                Source="https://hatscripts.github.io/circle-flags/flags/ru.svg"
+                                Source="{Binding CountryFlagURL, Converter={StaticResource sourceConverter}}"
                                 WidthRequest="60" />
                             <Label
                                 Grid.Row="0"
